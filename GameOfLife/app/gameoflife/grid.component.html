@@ -1,0 +1,19 @@
+<table>
+	<tbody>
+		<tr *ngFor="let row of rows; let i = index">
+			<td *ngFor="let col of cols; let j = index">
+				<!-- ({{i}},{{j}}) -->
+				<gol-cell [cell]="getCell(i,j)"></gol-cell>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<button mat-icon-button (click)="play()">
+	<mat-icon matTooltip="Pause" *ngIf="!isRunning">play_circle_filled</mat-icon>
+	<mat-icon matTooltip="Lancement" *ngIf="isRunning">pause_circle_filled</mat-icon>
+</button>
+
+<button mat-icon-button (click)="clear()">
+	<mat-icon matTooltip="Reset">cancel</mat-icon>
+</button>
