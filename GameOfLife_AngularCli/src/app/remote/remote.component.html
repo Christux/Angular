@@ -1,0 +1,30 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>Remote</mat-card-title>
+	</mat-card-header>
+	
+	<mat-card-content>
+		<button mat-icon-button 
+			(click)="play()"
+			matTooltip="{{isRunning ? 'Pause':'Start'}}">
+			<mat-icon *ngIf="!isRunning">play_circle_filled</mat-icon> 
+			<mat-icon *ngIf="isRunning">pause_circle_filled</mat-icon>
+		</button>
+		
+		<button mat-icon-button (click)="clear()" matTooltip="Reset">
+			<mat-icon>cancel</mat-icon>
+		</button>
+
+		<button mat-icon-button (click)="rand()" matTooltip="Randomize">
+			<mat-icon>new_releases</mat-icon>
+		</button>
+
+		<mat-slider class="mat-slider"
+			min="1" max="100" step="5"
+			matTooltip="Speed" 
+			(change)="onSpeedChange($event)"
+			[(value)]="speed">
+		</mat-slider>
+
+	</mat-card-content>
+</mat-card>

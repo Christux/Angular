@@ -1,0 +1,23 @@
+<app-header-bar [title]="title"></app-header-bar>
+
+<div class="container"
+	fxLayout
+	fxLayout.xs="column"
+	fxLayoutAlign="center"
+    fxLayoutGap="10px">
+	<app-gol-grid
+		[m]="m"
+		[n]="n"
+		[getCell]="getCell.bind(this)">
+	</app-gol-grid>
+	<app-remote
+		[play]="play.bind(this)"
+		[clear]="clear.bind(this)"
+		[rand]="randomize.bind(this)"
+		[setSpeed]="setSpeed.bind(this)"
+		[isRunning]="isRunning"
+		[(speed)]="speed">
+	</app-remote>
+</div>
+
+<div (konami)="sayHello()"></div>

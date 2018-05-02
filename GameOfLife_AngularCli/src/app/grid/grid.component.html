@@ -1,0 +1,9 @@
+<table>
+	<tbody>
+		<tr *ngFor="let row of rows; let i = index">
+			<td *ngFor="let col of cols; let j = index">
+				<app-gol-cell [cell]="getCell(i,j)"></app-gol-cell>
+			</td>
+		</tr>
+	</tbody>
+</table>
